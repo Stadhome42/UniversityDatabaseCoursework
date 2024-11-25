@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="eng">
+
+<head>
+    <link rel="icon" href="logo.png" type="image/png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Saxon Fixtures </title>
+</head>
+
+<body>
+    <%- include('common/nav'); %>
+
+    <table class = "fixture">
+        <thead>
+            <th>Opposition</th>
+            <th>Venue</th>
+            <th>Date</th>
+            <th>Pitch off</th>
+
+        </thead>
+        <% Fixtures.forEach(Fixtures=> { %>
+        <tr>
+            <td class="opponent"><%- Fixtures.Fix_Opponent %></td>
+            <td class="venue"><%- Fixtures.Fix_Venue %></td>
+            <td class="date"><%- Fixtures.Fix_Date.toString().substring(0, 16) %></td>
+            <td class="date"><%- Fixtures.Fix_Date.toString().substring(16, 21) %></td>
+
+        </tr>
+        <% }) %>
+    </table>
+    <%- include('common/footer'); %>
+
+</body>
+
+</html>

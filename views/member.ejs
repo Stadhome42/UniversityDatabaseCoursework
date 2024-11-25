@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="eng">
+
+<head>
+    <link rel="icon" href="logo.png" type="image/png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Saxon Members </title>
+</head>
+<body>
+    <%- include('common/nav'); %>
+
+    <!-- display baseball table, showing 1st name of all players, position and role -->
+    <table class = "members">
+        <thead>
+            <th>URN</th>
+            <th>Forename</th>
+            <th>Position</th>
+        </thead>
+        <% Student.forEach(Student=> { %>
+        <tr>
+            <td class="urn"><%- Student.URN %></td>
+            <td class="name"><%- Student.Stu_FName %> <%- Student.Stu_LName %></td>
+            <td class="pos"><%- Student.POS_NAME %></td>
+            <td class = "urn"><a href = "view/<%= Student.URN %>" + >View</a> </td>
+            <td class = "urn"><a href = "update/<%= Student.URN %>" + >Update</a> </td>
+
+
+        </tr>
+        <% }) %>
+    </table>
+    <%- include('common/footer'); %>
+
+</body>
+
+</html>

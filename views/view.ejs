@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="eng">
+
+<head>
+    <link rel="icon" href="logo.png" type="image/png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Saxon View Member </title>
+</head>
+
+<body>
+    <%- include('common/nav'); %>
+    <dl class = "Details">
+        <dt>URN:</dt>
+        <dd><%- Student.URN %></dd>
+        <dt>Name:</dt>
+        <dd><%- Student.Stu_FName %> <%- Student.Stu_LName %></dd>
+        <dt>Position:</dt>
+        <dd><%- Student.Pos_Name %></dd>        
+    </dl>
+    <a href = "/member"  class="button">Back</a>
+    <a href="/delete/<%- Student.URN %>" onclick="return confirm('Are you sure you want to delete this member?');" class="button delete">Delete</a>
+
+    
+
+    </table>
+    <%- include('common/footer'); %>
+
+</body>
+
+</html>
+<style>
+    *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+main{
+    flex:1;
+}
+
+body{
+    font-family: 'Times New Roman', Times, serif;
+    background-color: #E4C489;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.button {
+    display: inline-block;
+    padding: 5px 10px;
+    background-color: #1A2447; 
+    color: #E4C489; 
+    text-decoration: none;
+    border-radius: 4px; 
+}
+
+.delete{
+    float: right;
+}
+
+.button:hover {
+    background-color:navy; 
+}
+
+
+footer{
+    margin-top: 10px;
+    background-color: #1A2447;
+    color: #E4C489;
+    font-weight: bold;
+    align-items: center;
+    text-decoration: none;
+}
+
+footer ul{
+    display: flex;
+    justify-content: center;
+}
+
+footer li {
+    margin: 0 20px;
+    list-style: none;
+}
+nav{
+    background-color: #1A2447;
+    color: #E4C489;
+    font-weight: bold;
+    align-items: center;
+    text-decoration: none;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+nav ul{
+    
+    display: flex;
+    justify-content: center;
+    padding: 15px;
+}
+
+nav li {
+    margin: 0 20px;
+    list-style: none;
+}
+
+.options{
+    text-align: center;
+    width: 100%;
+    padding-right: 92px;
+}
+
+.Details{
+    color: #1A2447;
+    text-align: center;
+    padding-top: 10px;
+}
+
+
+
+</style>

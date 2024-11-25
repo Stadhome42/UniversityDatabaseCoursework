@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="eng">
+
+<head>
+    <link rel="icon" href="logo.png" type="image/png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Surrey Saxons </title>
+</head>
+
+<body>
+    <%- include('common/nav'); %>
+
+    <form action="/submit" method="post">
+        <!-- EJS tags for dynamic content -->
+        <div>
+            <label for="name">Forename*:</label>
+            <input type="text" id="name" name="name" value="" required>
+        </div>
+    
+        <div>
+            <label for="surname">Surname*:</label>
+            <input type="text" id="surname" name="surname" value="" required>
+        </div>
+    
+        <div>
+            <label for="position">Select Position*:</label>
+            <select id="position" name="position" required>
+                <option value="1">First Base</option>
+                <option value="2">Second Base</option>
+                <option value="3">Shortstop</option>
+                <option value="4">Third Base</option>
+                <option value="5">Catcher</option>
+                <option value="6">Pitcher</option>
+                <option value="7">Right Field</option>
+                <option value="8">Center Field</option>
+                <option value="9">Left Field</option>
+            </select>
+        </div>
+    
+        <div>
+            <label for="phone">Phone number*:</label>
+            <input type="text" id="phone" name="phone" value="" required>
+        </div>
+    
+        <div>
+            <input type="hidden" id="urn" name="urn" value="<%= studentURN %>">
+        </div>
+    
+        <div>
+            <button type="submit">Submit</button>
+        </div>
+    </form>
+    
+    <%- include('common/footer'); %>
+
+</body>
+
+</html>
+
+<style>
+main{
+    flex:1;
+}
+
+body{
+    font-family: 'Times New Roman', Times, serif;
+    background-color: #E4C489;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+form {
+    max-width: 400px;
+    margin: auto;
+    padding: 25px;
+    background-color: #1A2447;
+    color: #E4C489;
+    border-radius: 8px;
+}
+
+footer{
+    margin-top: 10px;
+    background-color: #1A2447;
+    color: #E4C489;
+    font-weight: bold;
+    align-items: center;
+    text-decoration: none;
+}
+
+footer ul{
+    display: flex;
+    justify-content: center;
+}
+
+footer li {
+    margin: 0 20px;
+    list-style: none;
+}
+nav{
+    background-color: #1A2447;
+    color: #E4C489;
+    font-weight: bold;
+    align-items: center;
+    text-decoration: none;
+}
+
+input, select {
+    /* vertical-align: middle; */
+    align-items: center;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+nav ul{
+    
+    display: flex;
+    justify-content: center;
+    padding: 15px;
+}
+
+nav li {
+    margin: 0 20px;
+    list-style: none;
+}
+
+.options{
+    text-align: center;
+    width: 100%;
+    padding-right: 92px;
+}
+
+.Details{
+    color: #1A2447;
+    text-align: center;
+    padding-top: 10px;
+}
+
+
+</style>
